@@ -1,4 +1,6 @@
 <?php
+// Compatibility entry point for servers still using the repository root as document root.
+require __DIR__ . '/public/index.php';
 /*
 |---------------------------------------------------------------
 | PHP ERROR REPORTING LEVEL

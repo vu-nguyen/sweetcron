@@ -1,0 +1,3 @@
+<?php $xml = static fn ($value) => htmlspecialchars((string) $value, ENT_XML1 | ENT_COMPAT, 'UTF-8'); ?><?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel><title>Sweetcron Lifestream</title><link><?= $xml(base_url()) ?></link><description>Latest lifestream activity</description>
+<?php foreach ($items as $item): ?><item><title><?= $xml($item['item_title']) ?></title><link><?= $xml($item['item_permalink'] ?: site_url('items/view/' . $item['ID'])) ?></link><description><?= $xml($item['item_content']) ?></description><pubDate><?= gmdate(DATE_RSS, (int) $item['item_date']) ?></pubDate><guid><?= $xml($item['item_permalink'] ?: site_url('items/view/' . $item['ID'])) ?></guid></item><?php endforeach; ?></channel></rss>

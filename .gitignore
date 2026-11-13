@@ -1,1 +1,7 @@
-.svn
+/vendor/
+/writable/cache/*
+/writable/logs/*
+/writable/session/*
+/writable/uploads/*
+!.gitkeep
+.env
